@@ -19,10 +19,10 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
 
 const Container = styled.div`
-  flex: 1;
-  background-color: #202020;
+  flex: 1.1;
+  background-color: ${({ theme }) => theme.bg};
   height: 100vh;
-  color: white;
+  color: ${({ theme }) => theme.text};
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -30,7 +30,7 @@ const Container = styled.div`
 
   &::-webkit-scrollbar {
     /* padding: 5px; */
-    width: 8px;
+    width: 6px;
     border-radius: 100vw;
     /* border: 1px solid red; */
     /* background-color: gray; */
@@ -44,7 +44,7 @@ const Container = styled.div`
 
   &::-webkit-scrollbar-thumb {
     /* width: 20px; */
-    
+
     background-color: #6b6969;
     outline: 1px solid slategrey;
     border-radius: 100vw;
@@ -52,7 +52,7 @@ const Container = styled.div`
 
   &::-webkit-scrollbar-thumb:hover {
     /* width: 20px; */
-    
+
     background-color: #a09e9e;
     outline: 1px solid slategrey;
     border-radius: 15px;
@@ -104,7 +104,14 @@ const Button = styled.button`
   gap: 5px;
 `;
 
-const Menu = () => {
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaaa;
+  margin-bottom: 20px;
+`;
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -133,13 +140,16 @@ const Menu = () => {
           <HistoryOutlinedIcon />
           History
         </Item>
-        <Login>Sign in to like videos, comment, and subscribe.</Login>
-        <Button>
-          {" "}
-          <AccountCircleOutlinedIcon />
-          SIGN IN
-        </Button>
+        <Login>
+          Sign in to like videos, comment, and subscribe.
+          <Button>
+            {" "}
+            <AccountCircleOutlinedIcon />
+            SIGN IN
+          </Button>
+        </Login>
         <Hr />
+        <Title>BEST OF YUTUB</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
@@ -177,7 +187,7 @@ const Menu = () => {
           <HelpOutlineOutlinedIcon />
           Help
         </Item>
-        <Item>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
           Light Mode
         </Item>
