@@ -20,7 +20,7 @@ import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightne
 
 const Container = styled.div`
   flex: 1.1;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.bgLighter};
   height: 100vh;
   color: ${({ theme }) => theme.text};
   position: sticky;
@@ -45,8 +45,8 @@ const Container = styled.div`
   &::-webkit-scrollbar-thumb {
     /* width: 20px; */
 
-    background-color: #6b6969;
-    outline: 1px solid slategrey;
+    background-color: ${({ theme }) => theme.soft};
+    outline: 1px solid ${({ theme }) => theme.soft};
     border-radius: 100vw;
   }
 
@@ -54,7 +54,7 @@ const Container = styled.div`
     /* width: 20px; */
 
     background-color: #a09e9e;
-    outline: 1px solid slategrey;
+    /* outline: 1px solid slategrey; */
     border-radius: 15px;
   }
 `;
