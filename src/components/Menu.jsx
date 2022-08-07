@@ -45,8 +45,8 @@ const Container = styled.div`
   &::-webkit-scrollbar-thumb {
     /* width: 20px; */
 
-    background-color: ${({ theme }) => theme.soft};
-    outline: 1px solid ${({ theme }) => theme.soft};
+    background-color: ${({ theme }) => theme.bgLighter};
+    outline: 1px solid ${({ theme }) => theme.bgLighter};
     border-radius: 100vw;
   }
 
