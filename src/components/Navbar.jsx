@@ -7,6 +7,7 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.bgLighter};
+  height: 56px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -24,9 +25,17 @@ const Search = styled.div`
   margin: auto;
   display: flex;
   justify-content: space-between;
-
+  padding: 5px; 
+  border: 1px solid #ccc;
+  border-radius: 3px;
 `;
-const Input = styled.input``;
+
+const Input = styled.input`
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: ${({ theme }) => theme.text};
+`;
 
 const Button = styled.button`
   padding: 5px 15px;
@@ -35,7 +44,6 @@ const Button = styled.button`
   color: #3ea6ff;
   border-radius: 3px;
   font-weight: 300;
-  margin-top: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
