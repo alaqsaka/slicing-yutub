@@ -6,6 +6,7 @@ import { darkTheme, lightTheme } from "./utils/Theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
+import SignIn from "./pages/SignIn";
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ const Main = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 22px 50px;
+  padding: 22px 30px;
 `;
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Routes>
                 <Route path="/">
                   <Route index element={<Home />} />
+                  <Route path="signin" element={<SignIn />} />
                   <Route path="video">
                     <Route path=":id" element={<Video />} />
                   </Route>
